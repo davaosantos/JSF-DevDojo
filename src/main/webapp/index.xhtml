@@ -5,9 +5,44 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
+    <h:body>
+        <h:outputLabel value="Hello"/><br/>
+        <h:outputLabel value="#{estudanteRegistrarBean.nome}"/><br/>
 
-    <h:outputLabel value="Hello"/><br/>
-    <h:outputLabel value="#{estudanteRegistrarBean.nome}"/><br/>
+        <h:outputLabel value="Comparação de notas com eq #{estudanteRegistrarBean.nota01 eq estudanteRegistrarBean.nota02}"/>
+        <br/>
+        <h:outputLabel value="Comparação de notas com == #{estudanteRegistrarBean.nota01 == estudanteRegistrarBean.nota02}"/>
+        <br/>
+        <h:outputLabel value="Comparação de notas com == e AND #{estudanteRegistrarBean.nota01 == estudanteRegistrarBean.nota02
+        and estudanteRegistrarBean.nome eq 'David'}"/>
+        <br/>
+        <h:outputText value="Comparação de notas com ge "/>
+        <h:outputLabel value="#{estudanteRegistrarBean.nota01 ge estudanteRegistrarBean.nota02}"/>
+        <br/>
+        <h:outputText value="Comparação de notas com le "/>
+        <h:outputLabel value="#{estudanteRegistrarBean.nota01 le estudanteRegistrarBean.nota02}"/>
+        <br/>
+        <br/>
+        <h:outputText value="Ternário, comparações"/>
+        <br/>
+        <h:outputLabel value="#{estudanteRegistrarBean.nota01 eq 0 ? 'ZERO' : 'Não é zero' }"/>
+        <br/>
+        <h:outputLabel value="#{estudanteRegistrarBean.nota01 lt 0 ? 'É MAIOR QUE ZERO' : 'NÃO É MAIOR QUE 0' }"/>
+        <br/>
+        <h:outputText value="Operadores de atribuição"/>
+        <br/>
+        <h:outputLabel value="#{estudanteRegistrarBean.nota01 = 40}"/><br/>
+        <h:outputText value="#{estudanteRegistrarBean.nota01}"/>
+        <br/>
+        <h:outputText value="Concatenação"/>
+        <br/>
+        <h:outputLabel value="#{estudanteRegistrarBean.nome += ' Oliveira'}"/>
 
+        <!-- Palavras reservadas : and, or, not, eq, ne(not equal !=),
+        lt, gt, le, ge, true, false ,
+        null, instanceof, empty, div, mod(para resto %)
+        -->
+
+    </h:body>
 </f:view>
 </html>

@@ -5,16 +5,16 @@ import javax.inject.Named;
 import java.io.Serializable;
 
 
-@Named(value = "estudanteRegistrarBean")
+@Named
 @ViewScoped
 public class EstudanteRegistrarBean implements Serializable {
 
     private String nome = "David";
     private String sobrenome = "Oliveira";
 
-    private Double nota01;
+    private Double nota01 = 10.0;
 
-    private Double nota02;
+    private Double nota02 = 4.0;
 
     private Double nota03;
 
