@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+>
+<f:view>
+    <h:body>
+
+        <p:importEnum type="br.com.devdojo.maratonajsf.model.enums.Turno" var="Turno" allSuffix="ALL_ENUM_VALUES" />
+
+        <h:outputLabel value="Hello"/><br/>
+        <h:outputLabel value="#{estudanteRegistrarBean.estudante.nome}"/><br/>
+
+        <h:outputLabel
+                value="Comparação de notas com eq #{estudanteRegistrarBean.estudante.nota01 eq estudanteRegistrarBean.estudante.nota02}"/>
+        <br/>
+        <h:outputLabel
+                value="Comparação de notas com == #{estudanteRegistrarBean.estudante.nota01 == estudanteRegistrarBean.estudante.nota02}"/>
+        <br/>
+        <h:outputLabel value="Comparação de notas com == e AND #{estudanteRegistrarBean.estudante.nota01 == estudanteRegistrarBean.estudante.nota02
+        and estudanteRegistrarBean.estudante.nome eq 'David'}"/>
+        <br/>
+        <h:outputText value="Comparação de notas com ge "/>
+        <h:outputLabel value="#{estudanteRegistrarBean.estudante.nota01 ge estudanteRegistrarBean.estudante.nota02}"/>
+        <br/>
+        <h:outputText value="Comparação de notas com le "/>
+        <h:outputLabel value="#{estudanteRegistrarBean.estudante.nota01 le estudanteRegistrarBean.estudante.nota02}"/>
+        <br/>
+        <br/>
+        <h:outputText value="Ternário, comparações"/>
+        <br/>
+        <h:outputLabel value="#{estudanteRegistrarBean.estudante.nota01 eq 0 ? 'ZERO' : 'Não é zero' }"/>
+        <br/>
+        <h:outputLabel
+                value="#{estudanteRegistrarBean.estudante.nota01 lt 0 ? 'É MAIOR QUE ZERO' : 'NÃO É MAIOR QUE 0' }"/>
+        <br/>
+        <h:outputText value="Operadores de atribuição"/>
+        <br/>
+        <h:outputLabel value="#{estudanteRegistrarBean.estudante.nota01 = 40}"/><br/>
+        <h:outputText value="#{estudanteRegistrarBean.estudante.nota01}"/>
+        <br/>
+        <h:outputText value="Concatenação"/>
+        <br/>
+        <h:outputLabel value="#{estudanteRegistrarBean.estudante.nome += ' Oliveira'}"/>
+
+        <!-- Palavras reservadas : and, or, not, eq, ne(not equal !=),
+        lt, gt, le, ge, true, false ,
+        null, instanceof, empty, div, mod(para resto %)
+        -->
+
+        <br/>
+        <h:outputText value="ENUM"></h:outputText>
+        <h:outputLabel value="#{estudanteRegistrarBean.estudante.turno}"/>
+        <br/>
+        <h:outputLabel value="#{estudanteRegistrarBean.estudante.turno.equals(Turno.MATUTINO)}"/>
+
+    </h:body>
+</f:view>
+</html>
