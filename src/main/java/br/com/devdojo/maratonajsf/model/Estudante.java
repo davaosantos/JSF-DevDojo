@@ -1,5 +1,6 @@
 package br.com.devdojo.maratonajsf.model;
 
+import br.com.devdojo.maratonajsf.model.enums.Turma;
 import br.com.devdojo.maratonajsf.model.enums.Turno;
 
 public class Estudante {
@@ -14,6 +15,8 @@ public class Estudante {
     private Double nota03;
 
     private Turno turno = Turno.MATUTINO;
+
+    private Turma turma = Turma.T1A;
 
     public Estudante() {
     }
@@ -75,5 +78,11 @@ public class Estudante {
         this.turno = turno;
     }
 
+    public Turma getTurma() {
+        return turma;
+    }
 
+    public void setTurma(Turma turma) {
+        this.turma = turma;
+    }
 }
