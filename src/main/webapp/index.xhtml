@@ -7,6 +7,9 @@
       xmlns:p="http://primefaces.org/ui"
 >
 <f:view>
+    <h:head>
+
+    </h:head>
     <h:body>
 
         <p:importEnum type="br.com.devdojo.maratonajsf.model.enums.Turno" var="Turno" allSuffix="ALL_ENUM_VALUES"/>
@@ -104,7 +107,8 @@
         #{estudanteRegistrarBean.executarRetorno("David")}
 
         <h:form>
-            <h:commandButton value="Ir para a proxima pagina" actionListener="#{estudanteRegistrarBean.irParaIndex2()}"/>
+            <h:commandButton value="Ir para a proxima pagina"
+                             actionListener="#{estudanteRegistrarBean.irParaIndex2()}"/>
             <h:commandButton value="Soltar magia" onclick="fazMagica('Hadooouken')"/>
 
             <!-- Passando valores com EL para funçoes JS -->
@@ -120,13 +124,55 @@
             <h:outputLabel value="#{nome}" style="color: #{status.index mod 2 == 0 ? 'red' : 'blue'}"/><br/>
         </ui:repeat>
 
+        <br/>
+        <br/>
+        <h:form id="form">
+            <h:commandButton value="Mostrar notas">
+                <f:ajax render="notasGrid" listener="#{estudanteRegistrarBean.exibirNotas()}"/>
+            </h:commandButton>
+            <h:commandButton value="Esconder notas">
+                <f:ajax render="notasGrid" listener="#{estudanteRegistrarBean.esconderNotas()}"/>
+            </h:commandButton>
+            <br/>
+            <h:outputText value="#{estudanteRegistrarBean.estudante.nome}"/>
+            <h:outputText value="#{estudanteRegistrarBean.estudante.sobrenome}"/>
+            <h:outputText value="#{estudanteRegistrarBean.estudante.turno}"/>
+
+            <h:panelGrid id="notasGrid">
+                <h:outputText value="#{estudanteRegistrarBean.estudante.nota01}"
+                              rendered="#{estudanteRegistrarBean.mostrarNotas}"/>
+                <h:outputText value="#{estudanteRegistrarBean.estudante.nota02}"
+                              rendered="#{estudanteRegistrarBean.mostrarNotas}"/>
+                <h:outputText value="#{estudanteRegistrarBean.estudante.nota03}"
+                              rendered="#{estudanteRegistrarBean.mostrarNotas}"/>
+            </h:panelGrid>
+
+            <br/><br/>
+
+            <h:commandButton value="Mostrar Link">
+                <f:ajax render="pgLink" listener="#{estudanteRegistrarBean.exibirLink()}"></f:ajax>
+            </h:commandButton>
+            <h:commandButton value="Esconder Link">
+                <f:ajax render="pgLink" listener="#{estudanteRegistrarBean.esconderLink()}"></f:ajax>
+            </h:commandButton>
+
+            <h:panelGroup id="pgLink">
+                <ui:fragment rendered="#{estudanteRegistrarBean.mostrarLink}" id="fragmentLink">
+                    <a href="http://www.google.com.br" target="_blank">www.google.com.br</a>
+                </ui:fragment>
+            </h:panelGroup>
+
+        </h:form>
+
+
     </h:body>
 
     <script type="text/javascript">
-        function alertNome(nome){
+        function alertNome(nome) {
             alert(nome)
         }
-        function fazMagica(magica){
+
+        function fazMagica(magica) {
             alert(magica)
         }
     </script>
