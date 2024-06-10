@@ -2,7 +2,9 @@ package br.com.devdojo.maratonajsf.bean.estudante;
 
 import br.com.devdojo.maratonajsf.model.Estudante;
 
+import javax.el.LambdaExpression;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -55,6 +57,11 @@ public class EstudanteRegistrarBean implements Serializable {
     public void esconderLink(){
         this.mostrarLink = false;
     };
+
+    public void calcularCubo(LambdaExpression le, long value){
+        long result = (long) le.invoke(FacesContext.getCurrentInstance().getELContext(), value);
+        System.out.println(result);
+    }
 
     public void executar(){
         System.out.println("Fazendo uma busca no BD");
