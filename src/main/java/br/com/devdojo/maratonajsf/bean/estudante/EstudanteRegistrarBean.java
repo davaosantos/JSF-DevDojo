@@ -66,7 +66,7 @@ public class EstudanteRegistrarBean implements Serializable {
     public void executar(){
         System.out.println("Fazendo uma busca no BD");
         System.out.printf("Processando os dados");
-        System.out.println("Exibindo os dados");
+        System.out.println("Exibindo os dados");//
     }
 
     public void executar(String par){
