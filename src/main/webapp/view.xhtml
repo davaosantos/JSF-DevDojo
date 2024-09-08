@@ -6,14 +6,17 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
-   <h:body>
-      <h:form>
-         <h:outputText value="#{testeApplicationBean.categoriaList}"/> <br/>
-         <h:outputText value="#{testeViewBean.personagemSelecionado}"/> <br/>
-         <h:commandButton actionListener="#{testeViewBean.selecionaPersonagem()}" value="Selecionar personagem"/>
-         <h:commandButton actionListener="#{testeViewBean.selecionaPersonagem()}" value="Selecionar personagem Forward" action="view2"/>
-         <h:commandButton actionListener="#{testeViewBean.selecionaPersonagem()}" value="Selecionar personagem Redirect" action="view2?faces-redirect=true"/>
-      </h:form>
-   </h:body>
 </h:head>
+<h:body>
+    <h:form>
+        <h:outputText value="#{testeApplicationBean.categoriaList}"/> <br/>
+        <h:outputText value="#{testeViewBean.personagemSelecionado}"/> <br/>
+        <h:commandButton actionListener="#{testeViewBean.selecionaPersonagem()}" value="Selecionar personagem"/>
+        <h:commandButton actionListener="#{testeViewBean.selecionaPersonagem()}" value="Selecionar personagem Forward"
+                         action="view2"/>
+        <h:commandButton actionListener="#{testeViewBean.selecionaPersonagem()}" value="Selecionar personagem Redirect"
+                         action="view2?faces-redirect=true"/>
+    </h:form>
+</h:body>
+
 </html>

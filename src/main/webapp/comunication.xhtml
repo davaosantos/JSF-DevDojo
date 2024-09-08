@@ -6,29 +6,35 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
-    <h:body>
-        <h:form>
-            <h:panelGrid columns="1">
-                <h:outputText value="#{facesContext.externalContext.getInitParameter('images.location')}"/>
-                <h:commandButton value="Imprimir parametro" actionListener="#{comunicacaoTeste1Bean.imprimirAtributos()}"/>
-            </h:panelGrid>
-        </h:form>
-        <h:form>
-            <h:panelGrid columns="1">
-                <h:inputText value="#{comunicacaoTeste1Bean.nome}"/>
-                <h:inputText value="#{comunicacaoTeste1Bean.sobrenome}"/>
-<!--                <h:commandButton value="Imprimir parametro" actionListener="#{comunicacaoTeste1Bean.save()}"/>-->
-<!--                <h:commandButton value="Save" action="#{comunicacaoTeste1Bean.save()}"/>-->
-                <h:button value="Save" outcome="comunication2?faces-redirect=true">
-                    <f:param name="nome" value="DevDojo"/>
-                    <f:param name="sobrenome" value="Ninjas" />
-                </h:button>
-                <h:link value="Save" outcome="comunication2?faces-redirect=true">
-                    <f:param name="nome" value="DevDojo"/>
-                    <f:param name="sobrenome" value="Ninjas" />
-                </h:link>
-            </h:panelGrid>
-        </h:form>
-    </h:body>
+
 </h:head>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="1">
+            <h:outputText value="#{facesContext.externalContext.getInitParameter('images.location')}"/>
+            <h:commandButton value="Imprimir parametro" actionListener="#{comunicacaoTeste1Bean.imprimirAtributos()}"/>
+        </h:panelGrid>
+    </h:form>
+    <h:form>
+        <h:panelGrid columns="1">
+            <h:inputText value="#{comunicacaoTeste1Bean.nome}"/>
+            <h:inputText value="#{comunicacaoTeste1Bean.sobrenome}"/>
+            <h:commandButton value="Imprimir parametro" actionListener="#{comunicacaoTeste1Bean.save()}"/>
+            <h:commandButton value="Vai para comunicacao teste 1" action="#{comunicacaoTeste1Bean.save()}"/>
+            <h:button value="Vai para comunicacao teste 2" outcome="comunication2?faces-redirect=true">
+                <f:param name="nome" value="DevDojo"/>
+                <f:param name="sobrenome" value="Ninjas"/>
+            </h:button>
+            <h:link value="Vai para comunicacao teste 2" outcome="comunication2?faces-redirect=true">
+                <f:param name="nome" value="DevDojo"/>
+                <f:param name="sobrenome" value="Ninjas"/>
+            </h:link>
+
+            <h:link value="Vai para comunicacao teste 3" outcome="comunication3">
+                <f:param name="nome" value="DevDojo"/>
+                <f:param name="sobrenome" value="Ninjas"/>
+            </h:link>
+        </h:panelGrid>
+    </h:form>
+</h:body>
 </html>
