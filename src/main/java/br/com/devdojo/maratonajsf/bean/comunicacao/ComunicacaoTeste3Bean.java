@@ -8,6 +8,9 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 @Named
@@ -16,18 +19,20 @@ public class ComunicacaoTeste3Bean implements Serializable {
 
     private String nome;
     private String sobrenome;
+    private Date data;
 
 
-    public void init(){
+    public void init() throws ParseException {
 //        if(!FacesContext.getCurrentInstance().isPostback()){
-            System.out.println("Criou comunicacao teste 3");
-            System.out.println(nome);
-            System.out.println(sobrenome);
+        System.out.println("Criou comunicacao teste 3");
+        System.out.println(nome);
+        System.out.println(sobrenome);
+        System.out.println(data);
 //        }
 
     }
 
-    public String save(){
+    public String save() {
         System.out.println("Save");
         return "resultado?faces-redirect=true&amp;includeViewParams=true";
     }
@@ -46,5 +51,13 @@ public class ComunicacaoTeste3Bean implements Serializable {
 
     public void setSobrenome(String sobrenome) {
         this.sobrenome = sobrenome;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
     }
 }

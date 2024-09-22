@@ -1,9 +1,12 @@
 package br.com.devdojo.maratonajsf.bean.comunicacao;
 
+import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 @Named
@@ -12,6 +15,14 @@ public class ComunicacaoTeste1Bean implements Serializable {
 
     private String nome;
     private String sobrenome;
+    private Date data = new Date();
+
+    private String dataStr;
+
+    @PostConstruct
+    public void init(){
+        dataStr = new SimpleDateFormat("dd-MM-yyyy").format(data);
+    }
 
     public String save(){
         System.out.println(nome);
@@ -37,5 +48,21 @@ public class ComunicacaoTeste1Bean implements Serializable {
 
     public void setSobrenome(String sobrenome) {
         this.sobrenome = sobrenome;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public String getDataStr() {
+        return dataStr;
+    }
+
+    public void setDataStr(String dataStr) {
+        this.dataStr = dataStr;
     }
 }
