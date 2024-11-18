@@ -3,6 +3,7 @@ package br.com.devdojo.maratonajsf.model;
 import br.com.devdojo.maratonajsf.model.enums.Turma;
 import br.com.devdojo.maratonajsf.model.enums.Turno;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,11 +23,11 @@ public class Estudante {
     private Turma turma = Turma.T1A;
 
     public static List<Estudante> getEstudanteList(){
-        return Arrays.asList(
+        return new ArrayList<>(Arrays.asList(
                 new Estudante("Sonic", "Hedghehog", 10.0),
                 new Estudante("Knuckles", "knuc", 5.5),
                 new Estudante("Tails", "talezao", 6.0)
-        );
+        ));
     }
 
     public Estudante() {
