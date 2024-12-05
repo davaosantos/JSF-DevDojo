@@ -6,8 +6,11 @@ import br.com.devdojo.maratonajsf.model.enums.Turno;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class Estudante {
+
+    private Long id;
 
     private String nome = "David";
     private String sobrenome = "Oliveira";
@@ -22,8 +25,11 @@ public class Estudante {
 
     private Turma turma = Turma.T1A;
 
+    private String email = "david_Alisson60@yahoo.com";
+
     public static List<Estudante> getEstudanteList(){
         return new ArrayList<>(Arrays.asList(
+                new Estudante("Sonic", "Hedghehog", 10.0),
                 new Estudante("Sonic", "Hedghehog", 10.0),
                 new Estudante("Knuckles", "knuc", 5.5),
                 new Estudante("Tails", "talezao", 6.0)
@@ -102,5 +108,34 @@ public class Estudante {
 
     public void setTurma(Turma turma) {
         this.turma = turma;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Estudante estudante = (Estudante) o;
+        return Objects.equals(nome, estudante.nome) && Objects.equals(sobrenome, estudante.sobrenome);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, sobrenome);
     }
 }
