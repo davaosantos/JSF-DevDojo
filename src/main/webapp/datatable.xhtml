@@ -16,84 +16,99 @@
 <h:body>
     <p:messages autoUpdate="true"/>
 
-    <h:dataTable value="#{dataTableTestBean.estudanteList}" var="estudante">
-        <h:column>
-            <f:facet name="header">Nome : </f:facet>
-            <h:outputText value="#{estudante.nome}"/>
-        </h:column>
-        <h:column>
-            <f:facet name="header">Sobrenome : </f:facet>
-            <h:outputText value="#{estudante.sobrenome}"/>
-        </h:column>
-        <h:column>
-            <f:facet name="header">Turno : </f:facet>
-            <h:outputText value="#{estudante.turno}"/>
-        </h:column>
-        <h:column>
-            <f:facet name="header">Email : </f:facet>
-            <h:outputText value="#{estudante.email}"/>
-        </h:column>
-    </h:dataTable>
-    <h:dataTable value="#{dataTableTestBean.estudanteSet}" var="estudante">
-        <h:column>
-            <f:facet name="header">Nome : </f:facet>
-            <h:outputText value="#{estudante.nome}"/>
-        </h:column>
-        <h:column>
-            <f:facet name="header">Sobrenome : </f:facet>
-            <h:outputText value="#{estudante.sobrenome}"/>
-        </h:column>
-        <h:column>
-            <f:facet name="header">Turno : </f:facet>
-            <h:outputText value="#{estudante.turno}"/>
-        </h:column>
-        <h:column>
-            <f:facet name="header">Email : </f:facet>
-            <h:outputText value="#{estudante.email}"/>
-        </h:column>
-    </h:dataTable>
-    <h:dataTable value="#{dataTableTestBean.estudanteLinkedList}" var="estudante">
-        <h:column>
-            <f:facet name="header">Nome : </f:facet>
-            <h:outputText value="#{estudante.nome}"/>
-        </h:column>
-        <h:column>
-            <f:facet name="header">Sobrenome : </f:facet>
-            <h:outputText value="#{estudante.sobrenome}"/>
-        </h:column>
-        <h:column>
-            <f:facet name="header">Turno : </f:facet>
-            <h:outputText value="#{estudante.turno}"/>
-        </h:column>
-        <h:column>
-            <f:facet name="header">Email : </f:facet>
-            <h:outputText value="#{estudante.email}"/>
-        </h:column>
-    </h:dataTable>
-    <h:dataTable value="#{dataTableTestBean.estudanteMapList.values()}" var="estudante">
-        <h:column>
-            <f:facet name="header">Nome : </f:facet>
-            <h:outputText value="#{estudante.nome}"/>
-        </h:column>
-        <h:column>
-            <f:facet name="header">Sobrenome : </f:facet>
-            <h:outputText value="#{estudante.sobrenome}"/>
-        </h:column>
-        <h:column>
-            <f:facet name="header">Turno : </f:facet>
-            <h:outputText value="#{estudante.turno}"/>
-        </h:column>
-        <h:column>
-            <f:facet name="header">Email : </f:facet>
-            <h:outputText value="#{estudante.email}"/>
-        </h:column>
-    </h:dataTable>
-    <h:dataTable value="#{dataTableTestBean.estudanteMapList.keySet()}" var="string">
-        <h:column>
-            <f:facet name="header">Chave : </f:facet>
-            <h:outputText value="#{string}"/>
-        </h:column>
-    </h:dataTable>
+    <h:form>
+        <h:dataTable value="#{dataTableTestBean.estudanteList}" var="estudante">
+            <h:column>
+                <f:facet name="header">Nome : </f:facet>
+                <h:commandLink actionListener="#{dataTableTestBean.orderByNome('asc')}">
+                    Nome Asc
+                </h:commandLink>
+                <h:commandLink actionListener="#{dataTableTestBean.orderByNome('desc')}">
+                    Nome Desc
+                </h:commandLink>
+                <h:outputText value="#{estudante.nome}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Sobrenome : </f:facet>
+                <h:commandLink actionListener="#{dataTableTestBean.orderBySobrenome('asc')}">
+                    Sobrenome Asc
+                </h:commandLink>
+                <h:commandLink actionListener="#{dataTableTestBean.orderBySobrenome('desc')}">
+                    Sobrenome Desc
+                </h:commandLink>
+                <h:outputText value="#{estudante.sobrenome}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Turno : </f:facet>
+                <h:outputText value="#{estudante.turno}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Email : </f:facet>
+                <h:outputText value="#{estudante.email}"/>
+            </h:column>
+        </h:dataTable>
+        <h:dataTable value="#{dataTableTestBean.estudanteSet}" var="estudante">
+            <h:column>
+                <f:facet name="header">Nome : </f:facet>
+                <h:outputText value="#{estudante.nome}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Sobrenome : </f:facet>
+                <h:outputText value="#{estudante.sobrenome}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Turno : </f:facet>
+                <h:outputText value="#{estudante.turno}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Email : </f:facet>
+                <h:outputText value="#{estudante.email}"/>
+            </h:column>
+        </h:dataTable>
+        <h:dataTable value="#{dataTableTestBean.estudanteLinkedList}" var="estudante">
+            <h:column>
+                <f:facet name="header">Nome : </f:facet>
+                <h:outputText value="#{estudante.nome}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Sobrenome : </f:facet>
+                <h:outputText value="#{estudante.sobrenome}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Turno : </f:facet>
+                <h:outputText value="#{estudante.turno}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Email : </f:facet>
+                <h:outputText value="#{estudante.email}"/>
+            </h:column>
+        </h:dataTable>
+        <h:dataTable value="#{dataTableTestBean.estudanteMapList.values()}" var="estudante">
+            <h:column>
+                <f:facet name="header">Nome : </f:facet>
+                <h:outputText value="#{estudante.nome}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Sobrenome : </f:facet>
+                <h:outputText value="#{estudante.sobrenome}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Turno : </f:facet>
+                <h:outputText value="#{estudante.turno}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Email : </f:facet>
+                <h:outputText value="#{estudante.email}"/>
+            </h:column>
+        </h:dataTable>
+        <h:dataTable value="#{dataTableTestBean.estudanteMapList.keySet()}" var="string">
+            <h:column>
+                <f:facet name="header">Chave : </f:facet>
+                <h:outputText value="#{string}"/>
+            </h:column>
+        </h:dataTable>
+    </h:form>
+
 </h:body>
 
 </html>

@@ -25,6 +25,22 @@ public class DataTableTestBean implements Serializable {
         estudanteMapList.values();
     }
 
+    public void orderByNome(String ordem){
+        if (ordem.equals("asc")){
+            estudanteList.sort(Comparator.comparing(Estudante::getNome));
+        }else{
+            estudanteList.sort(Comparator.comparing(Estudante::getNome).reversed());
+        }
+    }
+
+    public void orderBySobrenome(String ordem){
+        if (ordem.equals("asc")){
+            estudanteList.sort(Comparator.comparing(Estudante::getSobrenome));
+        }else{
+            estudanteList.sort(Comparator.comparing(Estudante::getSobrenome).reversed());
+        }
+    }
+
 
     public List<Estudante> getEstudanteList() {
         return estudanteList;
