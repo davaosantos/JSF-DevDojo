@@ -2,13 +2,9 @@ package br.com.devdojo.maratonajsf.bean.comunicacao;
 
 import org.omnifaces.util.Faces;
 
-import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
-import javax.servlet.http.Cookie;
 import java.io.Serializable;
-import java.net.URLDecoder;
-import java.util.Map;
 
 
 @Named

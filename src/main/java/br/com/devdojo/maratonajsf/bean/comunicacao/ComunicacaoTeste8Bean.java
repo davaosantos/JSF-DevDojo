@@ -1,10 +1,8 @@
 package br.com.devdojo.maratonajsf.bean.comunicacao;
 
-import br.com.devdojo.maratonajsf.model.Estudante;
 import org.omnifaces.util.Faces;
 
 import javax.faces.context.FacesContext;
-import javax.faces.context.Flash;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import javax.servlet.http.Cookie;

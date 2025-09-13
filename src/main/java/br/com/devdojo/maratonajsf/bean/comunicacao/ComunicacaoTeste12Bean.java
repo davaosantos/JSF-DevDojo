@@ -4,10 +4,8 @@ import br.com.devdojo.maratonajsf.model.Estudante;
 import br.com.devdojo.maratonajsf.util.ApplicationMapUtil;
 
 import javax.enterprise.context.RequestScoped;
-import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import java.io.Serializable;
-import java.util.List;
 
 
 @Named

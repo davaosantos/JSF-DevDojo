@@ -1,7 +1,6 @@
 package br.com.devdojo.maratonajsf.bean.comunicacao;
 
 import br.com.devdojo.maratonajsf.model.Estudante;
-import org.omnifaces.util.Faces;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;

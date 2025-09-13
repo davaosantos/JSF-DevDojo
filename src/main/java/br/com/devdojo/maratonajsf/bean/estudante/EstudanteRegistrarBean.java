@@ -3,10 +3,8 @@ package br.com.devdojo.maratonajsf.bean.estudante;
 import br.com.devdojo.maratonajsf.model.Estudante;
 
 import javax.el.LambdaExpression;
-import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.*;

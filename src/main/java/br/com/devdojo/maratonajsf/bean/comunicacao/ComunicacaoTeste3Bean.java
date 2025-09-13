@@ -1,15 +1,9 @@
 package br.com.devdojo.maratonajsf.bean.comunicacao;
 
-import org.omnifaces.cdi.Param;
-
-import javax.annotation.PostConstruct;
-import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 

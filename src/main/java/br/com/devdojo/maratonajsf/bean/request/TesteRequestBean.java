@@ -2,7 +2,6 @@ package br.com.devdojo.maratonajsf.bean.request;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
-import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
